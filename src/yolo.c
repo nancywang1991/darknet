@@ -1,21 +1,25 @@
+#define _GNU_SOURCE
 #include "network.h"
 #include "detection_layer.h"
 #include "cost_layer.h"
 #include "utils.h"
 #include "parser.h"
 #include "box.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #ifdef OPENCV
 #include "opencv2/highgui/highgui_c.h"
 #endif
 
-char *voc_names[] = {"aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"};
-image voc_labels[20];
+char *voc_names[] = {"aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor","patient"};
+image voc_labels[21];
 
 void train_yolo(char *cfgfile, char *weightfile)
 {
-    char *train_images = "/data/voc/train.txt";
-    char *backup_directory = "/home/pjreddie/backup/";
+    char *train_images = "/home/wangnxr/Documents/darknet/yolo/train_data/train.txt";
+    char *backup_directory ="/home/wangnxr/Documents/darknet/yolo/backup/all_sbj/";
     srand(time(0));
     data_seed = time(0);
     char *base = basecfg(cfgfile);
@@ -232,7 +236,7 @@ void validate_yolo_recall(char *cfgfile, char *weightfile)
     srand(time(0));
 
     char *base = "results/comp4_det_test_";
-    list *plist = get_paths("data/voc.2007.test");
+    list *plist = get_paths("yolo/train_data/e70923c4_test.txt");
     char **paths = (char **)list_to_array(plist);
 
     layer l = net.layers[net.n-1];
@@ -254,7 +258,7 @@ void validate_yolo_recall(char *cfgfile, char *weightfile)
     int m = plist->size;
     int i=0;
 
-    float thresh = .001;
+    float thresh = .01;
     float iou_thresh = .5;
     float nms = 0;
 
@@ -262,7 +266,8 @@ void validate_yolo_recall(char *cfgfile, char *weightfile)
     int correct = 0;
     int proposals = 0;
     float avg_iou = 0;
-
+    float avg_thresh = 0;
+    FILE * fp = fopen("incorrect.txt", "w+");
     for(i = 0; i < m; ++i){
         char *path = paths[i];
         image orig = load_image_color(path, 0, 0);
@@ -278,33 +283,35 @@ void validate_yolo_recall(char *cfgfile, char *weightfile)
         labelpath = find_replace(labelpath, ".JPEG", ".txt");
 
         int num_labels = 0;
+	float max_thresh = 0;
+	int max_thresh_ind = 0;
         box_label *truth = read_boxes(labelpath, &num_labels);
         for(k = 0; k < side*side*l.n; ++k){
-            if(probs[k][0] > thresh){
-                ++proposals;
+            if(probs[k][0] > max_thresh){
+                max_thresh_ind = k;
+		max_thresh = probs[k][0];
             }
         }
+	float best_iou = 0;
         for (j = 0; j < num_labels; ++j) {
             ++total;
             box t = {truth[j].x, truth[j].y, truth[j].w, truth[j].h};
-            float best_iou = 0;
-            for(k = 0; k < side*side*l.n; ++k){
-                float iou = box_iou(boxes[k], t);
-                if(probs[k][0] > thresh && iou > best_iou){
-                    best_iou = iou;
-                }
+            best_iou = box_iou(boxes[max_thresh_ind], t);
             }
-            avg_iou += best_iou;
-            if(best_iou > iou_thresh){
-                ++correct;
-            }
-        }
+        avg_iou += best_iou;
+        if(best_iou > iou_thresh){
+            ++correct;
+        }else{
+	fprintf(fp, "%s\n", paths[i]); 
+	} 
+	avg_thresh += max_thresh;
 
-        fprintf(stderr, "%5d %5d %5d\tRPs/Img: %.2f\tIOU: %.2f%%\tRecall:%.2f%%\n", i, correct, total, (float)proposals/(i+1), avg_iou*100/total, 100.*correct/total);
+        fprintf(stderr, "%5d %5d %5d\tavg_thresh: %.2f%%\tIOU: %.2f%%\tRecall:%.2f%%\n", i, correct, total, avg_thresh*100/total, avg_iou*100/total, 100.*correct/total);
         free(id);
         free_image(orig);
         free_image(sized);
     }
+    fclose(fp);
 }
 
 void test_yolo(char *cfgfile, char *weightfile, char *filename, float thresh)
@@ -344,9 +351,9 @@ void test_yolo(char *cfgfile, char *weightfile, char *filename, float thresh)
         convert_yolo_detections(predictions, l.classes, l.n, l.sqrt, l.side, 1, 1, thresh, probs, boxes, 0);
         if (nms) do_nms_sort(boxes, probs, l.side*l.side*l.n, l.classes, nms);
         //draw_detections(im, l.side*l.side*l.n, thresh, boxes, probs, voc_names, voc_labels, 20);
-        draw_detections(im, l.side*l.side*l.n, thresh, boxes, probs, voc_names, 0, 20);
+        draw_detections(im, l.side*l.side*l.n, thresh, boxes, probs, voc_names, 0, 21);
         show_image(im, "predictions");
-        save_image(im, "predictions");
+        save_image(im, basename(input));
 
         show_image(sized, "resized");
         free_image(im);
@@ -395,9 +402,9 @@ void demo_swag(char *cfgfile, char *weightfile, float thresh){}
 #endif
  */
 
-void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam_index);
+void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam_index, char *filename);
 #ifndef GPU
-void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam_index)
+void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam_index, char *filename)
 {
     fprintf(stderr, "Darknet must be compiled with CUDA for YOLO demo.\n");
 }
@@ -406,7 +413,7 @@ void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam_index)
 void run_yolo(int argc, char **argv)
 {
     int i;
-    for(i = 0; i < 20; ++i){
+    for(i = 0; i < 21; ++i){
         char buff[256];
         sprintf(buff, "data/labels/%s.png", voc_names[i]);
         voc_labels[i] = load_image_color(buff, 0, 0);
@@ -418,6 +425,7 @@ void run_yolo(int argc, char **argv)
         fprintf(stderr, "usage: %s %s [train/test/valid] [cfg] [weights (optional)]\n", argv[0], argv[1]);
         return;
     }
+    char *file = find_char_arg(argc, argv, "-file", 0);
 
     char *cfg = argv[3];
     char *weights = (argc > 4) ? argv[4] : 0;
@@ -426,5 +434,5 @@ void run_yolo(int argc, char **argv)
     else if(0==strcmp(argv[2], "train")) train_yolo(cfg, weights);
     else if(0==strcmp(argv[2], "valid")) validate_yolo(cfg, weights);
     else if(0==strcmp(argv[2], "recall")) validate_yolo_recall(cfg, weights);
-    else if(0==strcmp(argv[2], "demo")) demo_yolo(cfg, weights, thresh, cam_index);
+    else if(0==strcmp(argv[2], "demo")) demo_yolo(cfg, weights, thresh, cam_index, file);
 }

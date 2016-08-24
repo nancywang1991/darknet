@@ -143,6 +143,39 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 }
 
 
+void crop_detection_coords(image im, int num, float thresh, box *boxes, float **probs, char **names, image *labels, int classes, int target_class, int *left, int *right, int *top, int *bot)
+{
+    int i;
+    for(i = 0; i < num; ++i){
+        int class = max_index(probs[i], classes);
+        if (class == target_class) {
+                
+		float prob = probs[i][class];
+		if(prob > thresh){
+		    int width = pow(prob, 1./2.)*10+1;
+		    printf("%s: %.2f\n", names[class], prob);
+		    int offset = class*17 % classes;
+		    box b = boxes[i];
+
+		    *left  = (b.x-2*b.w/3)*im.w;
+		    *right = (b.x+2*b.w/3)*im.w;
+		    *top   = (b.y-b.h/2)*im.h;
+		    *bot   = (b.y+2*b.h/3)*im.h;
+
+		    if(*left < 0) *left = 0;
+		    if(*right > im.w-1) *right = im.w-1;
+		    if(*top < 0) *top = 0;
+		    if(*bot > im.h-1) *bot = im.h-1;
+                    return;
+		}
+        }
+    }
+    *left = 0;
+    *right = 0;
+    *top = 0;
+    *bot = 0;
+}
+
 void flip_image(image a)
 {
     int i,j,k;
@@ -316,7 +349,7 @@ void save_image(image im, const char *name)
 {
     char buff[256];
     //sprintf(buff, "%s (%d)", name, windows);
-    sprintf(buff, "%s.png", name);
+    sprintf(buff, "%s", name);
     unsigned char *data = calloc(im.w*im.h*im.c, sizeof(char));
     int i,k;
     for(k = 0; k < im.c; ++k){
@@ -327,6 +360,33 @@ void save_image(image im, const char *name)
     int success = stbi_write_png(buff, im.w, im.h, im.c, data, im.w*im.c);
     free(data);
     if(!success) fprintf(stderr, "Failed to write image %s\n", buff);
+}
+
+void save_image2(image im, const char *name, int cnt)
+{
+    char buff[256];
+    //sprintf(buff, "%s (%d)", name, windows);
+    sprintf(buff, "%s%04d.png", name, cnt);
+    unsigned char *data = calloc(im.w*im.h*im.c, sizeof(char));
+    int i,k;
+    for(k = 0; k < im.c; ++k){
+        for(i = 0; i < im.w*im.h; ++i){
+            data[i*im.c+k] = (unsigned char) (255*im.data[i + k*im.w*im.h]);
+        }
+    }
+    int success = stbi_write_png(buff, im.w, im.h, im.c, data, im.w*im.c);
+    free(data);
+    if(!success) fprintf(stderr, "Failed to write image %s\n", buff);
+}
+
+void save_crop_coords(const char *name, int left, int right, int top, int bot)
+{
+    FILE *fp;
+    char buff[256];
+    sprintf(buff, "%s/coords.txt", name);
+    fp = fopen(buff, "a");
+    fprintf(fp, "%i,%i,%i,%i\n", left, right, top, bot);
+    fclose(fp);
 }
 
 #ifdef OPENCV

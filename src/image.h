@@ -22,6 +22,7 @@ void draw_box_width(image a, int x1, int y1, int x2, int y2, int w, float r, flo
 void draw_bbox(image a, box bbox, int w, float r, float g, float b);
 void draw_label(image a, int r, int c, image label, const float *rgb);
 void draw_detections(image im, int num, float thresh, box *boxes, float **probs, char **names, image *labels, int classes);
+void crop_detection_coords(image im, int num, float thresh, box *boxes, float **probs, char **names, image *labels, int classes, int target_class, int *left, int *right, int *top, int *bot);
 image image_distance(image a, image b);
 void scale_image(image m, float s);
 image crop_image(image im, int dx, int dy, int w, int h);
@@ -47,6 +48,8 @@ image collapse_images_vert(image *ims, int n);
 
 void show_image(image p, const char *name);
 void save_image(image p, const char *name);
+void save_image2(image im, const char *name, int cnt);
+void save_crop_coords(const char *name, int left, int right, int top, int bot);
 void show_images(image *ims, int n, char *window);
 void show_image_layers(image p, char *name);
 void show_image_collapsed(image p, char *name);
