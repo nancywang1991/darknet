@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c82d0b7-a802-4882-922f-fc6f48066711" name="Default" comment="" />
+    <ignored path="darknet.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="darknet" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="image.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/image.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-765">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="412" />
+    <option name="y" value="154" />
+    <option name="width" value="1386" />
+    <option name="height" value="697" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="darknet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="obj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c82d0b7-a802-4882-922f-fc6f48066711" name="Default" comment="" />
+      <created>1471998236918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1471998236918</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit of changes in fork">
+      <created>1471999108552</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1471999108552</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge branch 'master' of https://github.com/nancywang1991/darknet&#10;&#10;Conflicts:&#10;&#9;Makefile&#10;&#9;data/labels/aeroplane.png&#10;&#9;data/labels/airplane.png&#10;&#9;data/labels/apple.png&#10;&#9;data/labels/backpack.png&#10;&#9;data/labels/banana.png&#10;&#9;data/labels/baseball bat.png&#10;&#9;data/labels/baseball glove.png&#10;&#9;data/labels/bear.png&#10;&#9;data/labels/bed.png&#10;&#9;data/labels/bench.png&#10;&#9;data/labels/bicycle.png&#10;&#9;data/labels/bird.png&#10;&#9;data/labels/boat.png&#10;&#9;data/labels/book.png&#10;&#9;data/labels/bottle.png&#10;&#9;data/labels/bowl.png&#10;&#9;data/labels/broccoli.png&#10;&#9;data/labels/bus.png&#10;&#9;data/labels/cake.png&#10;&#9;data/labels/car.png&#10;&#9;data/labels/carrot.png&#10;&#9;data/labels/cat.png&#10;&#9;data/labels/cell phone.png&#10;&#9;data/labels/chair.png&#10;&#9;data/labels/clock.png&#10;&#9;data/labels/couch.png&#10;&#9;data/labels/cow.png&#10;&#9;data/labels/cup.png&#10;&#9;data/labels/dining table.png&#10;&#9;data/labels/diningtable.png&#10;&#9;data/labels/dog.png&#10;&#9;data/labels/donut.png&#10;&#9;data/labels/elephant.png&#10;&#9;data/labels/fire hydrant.png&#10;&#9;data/labels/fork.png&#10;&#9;data/labels/frisbee.png&#10;&#9;data/labels/giraffe.png&#10;&#9;data/labels/hair drier.png&#10;&#9;data/labels/handbag.png&#10;&#9;data/labels/horse.png&#10;&#9;data/labels/hot dog.png&#10;&#9;data/labels/keyboard.png&#10;&#9;data/labels/kite.png&#10;&#9;data/labels/knife.png&#10;&#9;data/labels/laptop.png&#10;&#9;data/labels/microwave.png&#10;&#9;data/labels/motorbike.png&#10;&#9;data/labels/motorcycle.png&#10;&#9;data/labels/mouse.png&#10;&#9;data/labels/orange.png&#10;&#9;data/labels/oven.png&#10;&#9;data/labels/parking meter.png&#10;&#9;data/labels/person.png&#10;&#9;data/labels/pizza.png&#10;&#9;data/labels/potted plant.png&#10;&#9;data/labels/pottedplant.png&#10;&#9;data/labels/refrigerator.png&#10;&#9;data/labels/remote.png&#10;&#9;data/labels/sandwich.png&#10;&#9;data/labels/scissors.png&#10;&#9;data/labels/sheep.png&#10;&#9;data/labels/sink.png&#10;&#9;data/labels/skateboard.png&#10;&#9;data/labels/skis.png&#10;&#9;data/labels/snowboard.png&#10;&#9;data/labels/sofa.png&#10;&#9;data/labels/spoon.png&#10;&#9;data/labels/sports ball.png&#10;&#9;data/labels/stop sign.png&#10;&#9;data/labels/suitcase.png&#10;&#9;data/labels/surfboard.png&#10;&#9;data/labels/teddy bear.png&#10;&#9;data/labels/tennis racket.png&#10;&#9;data/labels/tie.png&#10;&#9;data/labels/toaster.png&#10;&#9;data/labels/toilet.png&#10;&#9;data/labels/toothbrush.png&#10;&#9;data/labels/traffic light.png&#10;&#9;data/labels/train.png&#10;&#9;data/labels/truck.png&#10;&#9;data/labels/tv.png&#10;&#9;data/labels/tvmonitor.png&#10;&#9;data/labels/umbrella.png&#10;&#9;data/labels/vase.png&#10;&#9;data/labels/wine glass.png&#10;&#9;data/labels/zebra.png&#10;&#9;src/image.c&#10;&#9;src/yolo.c&#10;&#9;src/yolo_kernels.cu&#10;">
+      <created>1471999376762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1471999376762</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="412" y="154" width="1386" height="697" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.502886" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.497114" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit of changes in fork" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/nancywang1991/darknet&#10;&#10;Conflicts:&#10;&#9;Makefile&#10;&#9;data/labels/aeroplane.png&#10;&#9;data/labels/airplane.png&#10;&#9;data/labels/apple.png&#10;&#9;data/labels/backpack.png&#10;&#9;data/labels/banana.png&#10;&#9;data/labels/baseball bat.png&#10;&#9;data/labels/baseball glove.png&#10;&#9;data/labels/bear.png&#10;&#9;data/labels/bed.png&#10;&#9;data/labels/bench.png&#10;&#9;data/labels/bicycle.png&#10;&#9;data/labels/bird.png&#10;&#9;data/labels/boat.png&#10;&#9;data/labels/book.png&#10;&#9;data/labels/bottle.png&#10;&#9;data/labels/bowl.png&#10;&#9;data/labels/broccoli.png&#10;&#9;data/labels/bus.png&#10;&#9;data/labels/cake.png&#10;&#9;data/labels/car.png&#10;&#9;data/labels/carrot.png&#10;&#9;data/labels/cat.png&#10;&#9;data/labels/cell phone.png&#10;&#9;data/labels/chair.png&#10;&#9;data/labels/clock.png&#10;&#9;data/labels/couch.png&#10;&#9;data/labels/cow.png&#10;&#9;data/labels/cup.png&#10;&#9;data/labels/dining table.png&#10;&#9;data/labels/diningtable.png&#10;&#9;data/labels/dog.png&#10;&#9;data/labels/donut.png&#10;&#9;data/labels/elephant.png&#10;&#9;data/labels/fire hydrant.png&#10;&#9;data/labels/fork.png&#10;&#9;data/labels/frisbee.png&#10;&#9;data/labels/giraffe.png&#10;&#9;data/labels/hair drier.png&#10;&#9;data/labels/handbag.png&#10;&#9;data/labels/horse.png&#10;&#9;data/labels/hot dog.png&#10;&#9;data/labels/keyboard.png&#10;&#9;data/labels/kite.png&#10;&#9;data/labels/knife.png&#10;&#9;data/labels/laptop.png&#10;&#9;data/labels/microwave.png&#10;&#9;data/labels/motorbike.png&#10;&#9;data/labels/motorcycle.png&#10;&#9;data/labels/mouse.png&#10;&#9;data/labels/orange.png&#10;&#9;data/labels/oven.png&#10;&#9;data/labels/parking meter.png&#10;&#9;data/labels/person.png&#10;&#9;data/labels/pizza.png&#10;&#9;data/labels/potted plant.png&#10;&#9;data/labels/pottedplant.png&#10;&#9;data/labels/refrigerator.png&#10;&#9;data/labels/remote.png&#10;&#9;data/labels/sandwich.png&#10;&#9;data/labels/scissors.png&#10;&#9;data/labels/sheep.png&#10;&#9;data/labels/sink.png&#10;&#9;data/labels/skateboard.png&#10;&#9;data/labels/skis.png&#10;&#9;data/labels/snowboard.png&#10;&#9;data/labels/sofa.png&#10;&#9;data/labels/spoon.png&#10;&#9;data/labels/sports ball.png&#10;&#9;data/labels/stop sign.png&#10;&#9;data/labels/suitcase.png&#10;&#9;data/labels/surfboard.png&#10;&#9;data/labels/teddy bear.png&#10;&#9;data/labels/tennis racket.png&#10;&#9;data/labels/tie.png&#10;&#9;data/labels/toaster.png&#10;&#9;data/labels/toilet.png&#10;&#9;data/labels/toothbrush.png&#10;&#9;data/labels/traffic light.png&#10;&#9;data/labels/train.png&#10;&#9;data/labels/truck.png&#10;&#9;data/labels/tv.png&#10;&#9;data/labels/tvmonitor.png&#10;&#9;data/labels/umbrella.png&#10;&#9;data/labels/vase.png&#10;&#9;data/labels/wine glass.png&#10;&#9;data/labels/zebra.png&#10;&#9;src/image.c&#10;&#9;src/yolo.c&#10;&#9;src/yolo_kernels.cu&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/nancywang1991/darknet&#10;&#10;Conflicts:&#10;&#9;Makefile&#10;&#9;data/labels/aeroplane.png&#10;&#9;data/labels/airplane.png&#10;&#9;data/labels/apple.png&#10;&#9;data/labels/backpack.png&#10;&#9;data/labels/banana.png&#10;&#9;data/labels/baseball bat.png&#10;&#9;data/labels/baseball glove.png&#10;&#9;data/labels/bear.png&#10;&#9;data/labels/bed.png&#10;&#9;data/labels/bench.png&#10;&#9;data/labels/bicycle.png&#10;&#9;data/labels/bird.png&#10;&#9;data/labels/boat.png&#10;&#9;data/labels/book.png&#10;&#9;data/labels/bottle.png&#10;&#9;data/labels/bowl.png&#10;&#9;data/labels/broccoli.png&#10;&#9;data/labels/bus.png&#10;&#9;data/labels/cake.png&#10;&#9;data/labels/car.png&#10;&#9;data/labels/carrot.png&#10;&#9;data/labels/cat.png&#10;&#9;data/labels/cell phone.png&#10;&#9;data/labels/chair.png&#10;&#9;data/labels/clock.png&#10;&#9;data/labels/couch.png&#10;&#9;data/labels/cow.png&#10;&#9;data/labels/cup.png&#10;&#9;data/labels/dining table.png&#10;&#9;data/labels/diningtable.png&#10;&#9;data/labels/dog.png&#10;&#9;data/labels/donut.png&#10;&#9;data/labels/elephant.png&#10;&#9;data/labels/fire hydrant.png&#10;&#9;data/labels/fork.png&#10;&#9;data/labels/frisbee.png&#10;&#9;data/labels/giraffe.png&#10;&#9;data/labels/hair drier.png&#10;&#9;data/labels/handbag.png&#10;&#9;data/labels/horse.png&#10;&#9;data/labels/hot dog.png&#10;&#9;data/labels/keyboard.png&#10;&#9;data/labels/kite.png&#10;&#9;data/labels/knife.png&#10;&#9;data/labels/laptop.png&#10;&#9;data/labels/microwave.png&#10;&#9;data/labels/motorbike.png&#10;&#9;data/labels/motorcycle.png&#10;&#9;data/labels/mouse.png&#10;&#9;data/labels/orange.png&#10;&#9;data/labels/oven.png&#10;&#9;data/labels/parking meter.png&#10;&#9;data/labels/person.png&#10;&#9;data/labels/pizza.png&#10;&#9;data/labels/potted plant.png&#10;&#9;data/labels/pottedplant.png&#10;&#9;data/labels/refrigerator.png&#10;&#9;data/labels/remote.png&#10;&#9;data/labels/sandwich.png&#10;&#9;data/labels/scissors.png&#10;&#9;data/labels/sheep.png&#10;&#9;data/labels/sink.png&#10;&#9;data/labels/skateboard.png&#10;&#9;data/labels/skis.png&#10;&#9;data/labels/snowboard.png&#10;&#9;data/labels/sofa.png&#10;&#9;data/labels/spoon.png&#10;&#9;data/labels/sports ball.png&#10;&#9;data/labels/stop sign.png&#10;&#9;data/labels/suitcase.png&#10;&#9;data/labels/surfboard.png&#10;&#9;data/labels/teddy bear.png&#10;&#9;data/labels/tennis racket.png&#10;&#9;data/labels/tie.png&#10;&#9;data/labels/toaster.png&#10;&#9;data/labels/toilet.png&#10;&#9;data/labels/toothbrush.png&#10;&#9;data/labels/traffic light.png&#10;&#9;data/labels/train.png&#10;&#9;data/labels/truck.png&#10;&#9;data/labels/tv.png&#10;&#9;data/labels/tvmonitor.png&#10;&#9;data/labels/umbrella.png&#10;&#9;data/labels/vase.png&#10;&#9;data/labels/wine glass.png&#10;&#9;data/labels/zebra.png&#10;&#9;src/image.c&#10;&#9;src/yolo.c&#10;&#9;src/yolo_kernels.cu&#10;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/image.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

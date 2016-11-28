@@ -34,7 +34,6 @@ static image in_s ;
 static image det  ;
 static image det_s;
 static image disp ;
-static image disp2 ;
 static int left, right, top, bot;
 static cv::VideoCapture cap;
 static float fps = 0;
@@ -67,6 +66,7 @@ void *detect_in_thread(void *ptr)
     convert_yolo_detections(predictions, l.classes, l.n, l.sqrt, l.side, 1, 1, demo_thresh, probs, boxes, 0);
     if (nms > 0) {
     do_nms(boxes, probs, l.side*l.side*l.n, l.classes, nms);
+    
     crop_detection_coords(det, l.side*l.side*l.n, demo_thresh, boxes, probs, voc_names, voc_labels, CLS_NUM, 20, &left, &right, &top, &bot);
     } else {
     left = 0;
@@ -78,9 +78,9 @@ void *detect_in_thread(void *ptr)
     printf("\033[2J");
     printf("\033[1;1H");
     printf("\nFPS:%.0f\n",fps);
-    
+    printf("got here -5");  
     printf("Objects:\n\n");
-    
+    printf("got here -2");
     }
     return 0;
 }
@@ -111,7 +111,7 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
     detection_layer l = net.layers[net.n-1];
     int j;
     
-    
+    printf("got here -4");  
     boxes = (box *)calloc(l.side*l.side*l.n, sizeof(box));
     probs = (float **)calloc(l.side*l.side*l.n, sizeof(float *));
     for(j = 0; j < l.side*l.side*l.n; ++j) probs[j] = (float *)calloc(l.classes, sizeof(float *));
@@ -132,6 +132,7 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
     int cnt = 0;
     
     while(end_flag==0){
+        printf("got here-1"); 
         struct timeval tval_before, tval_after, tval_result;
         gettimeofday(&tval_before, NULL);
         if(pthread_create(&fetch_thread, 0, fetch_in_thread, 0)) error("Thread creation failed");
@@ -142,20 +143,25 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
 	//save_image2(disp2, "tmp/", cnt);
         //show_image(disp2, "YOLO");
         }*/
+        printf("got here0");
+        if (cnt%6==0){
+        save_crop_coords("tmp/", left, right, top, bot);
+        } 
         save_crop_coords("tmp/", left, right, top, bot);
 	cnt = cnt+1;
         free_image(disp);
-        free_image(disp2);
+        printf("got here1");
         cvWaitKey(1);
         pthread_join(fetch_thread, 0);
         pthread_join(detect_thread, 0);
-
+        printf("got here2");
         disp  = det;
         det   = in;
         det_s = in_s;
 
         gettimeofday(&tval_after, NULL);
         timersub(&tval_after, &tval_before, &tval_result);
+        printf("got here3");
         float curr = 1000000.f/((long int)tval_result.tv_usec);
         fps = .9*fps + .1*curr;
     }

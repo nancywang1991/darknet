@@ -1,0 +1,7 @@
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_1_0006.jpg
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_1_0151.jpg
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_1_0152.jpg
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_1_0153.jpg
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_1_0172.jpg
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_1_0201.jpg
+/home/wangnxr/Documents/darknet/yolo/train_data/VOCdevkit/e70923c4/JPEGImages/e70923c4_2_0088.jpg

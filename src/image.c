@@ -382,11 +382,12 @@ void save_image2(image im, const char *name, int cnt)
 void save_crop_coords(const char *name, int left, int right, int top, int bot)
 {
     FILE *fp;
-    char buff[256];
+    char buff[512];
     sprintf(buff, "%s/coords.txt", name);
     fp = fopen(buff, "a");
     fprintf(fp, "%i,%i,%i,%i\n", left, right, top, bot);
     fclose(fp);
+    //free(fp);
 }
 
 #ifdef OPENCV
