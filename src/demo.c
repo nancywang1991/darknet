@@ -48,6 +48,11 @@ void *fetch_in_thread(void *ptr)
 
 void *detect_in_thread(void *ptr)
 {
+    if(gpu_index >= 0){
+        cudaError_t status = cudaSetDevice(gpu_index);
+        check_error(status);
+        fprintf(stdout, "gpu: %i \n", gpu_index);
+    }
     float nms = .4;
 
     detection_layer l = net.layers[net.n-1];
