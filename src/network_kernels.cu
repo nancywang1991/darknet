@@ -40,8 +40,10 @@ void forward_network_gpu(network net, network_state state)
 {
     int i;
     for(i = 0; i < net.n; ++i){
+        //printf("layer:%i\n", i);
         state.index = i;
         layer l = net.layers[i];
+        //printf("layer_type:%s\n", l.type);
         if(l.delta_gpu){
             fill_ongpu(l.outputs * l.batch, 0, l.delta_gpu, 1);
         }
@@ -196,16 +198,20 @@ float *get_network_output_gpu(network net)
 
 float *network_predict_gpu(network net, float *input)
 {
+    //printf("got here G-1 \n");
     int size = get_network_input_size(net) * net.batch;
     network_state state;
     state.index = 0;
     state.net = net;
     state.input = cuda_make_array(input, size);
+    //printf("got here G0 \n");
     state.truth = 0;
     state.train = 0;
     state.delta = 0;
     forward_network_gpu(net, state);
+    //printf("got here G1 \n");
     float *out = get_network_output_gpu(net);
+    //printf("got here G2 \n");
     cuda_free(state.input);
     return out;
 }

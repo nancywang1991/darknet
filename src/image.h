@@ -49,7 +49,7 @@ image collapse_images_vert(image *ims, int n);
 void show_image(image p, const char *name);
 void save_image(image p, const char *name);
 void save_image2(image im, const char *name, int cnt);
-void save_crop_coords(const char *name, int left, int right, int top, int bot);
+void save_crop_coords(char *name, int left, int right, int top, int bot);
 void show_images(image *ims, int n, char *window);
 void show_image_layers(image p, char *name);
 void show_image_collapsed(image p, char *name);

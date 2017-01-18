@@ -379,12 +379,14 @@ void save_image2(image im, const char *name, int cnt)
     if(!success) fprintf(stderr, "Failed to write image %s\n", buff);
 }
 
-void save_crop_coords(const char *name, int left, int right, int top, int bot)
+void save_crop_coords(char *name, int left, int right, int top, int bot)
 {
     FILE *fp;
-    char buff[512];
-    sprintf(buff, "%s/coords.txt", name);
-    fp = fopen(buff, "a");
+    //char buff[512];
+    //sprintf(buff, "%s/coords.txt", name);
+    //const char* filename = name;
+    printf("%s",name);
+    fp = fopen(name, "a");
     fprintf(fp, "%i,%i,%i,%i\n", left, right, top, bot);
     fclose(fp);
     //free(fp);

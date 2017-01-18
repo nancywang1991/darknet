@@ -470,6 +470,7 @@ void top_predictions(network net, int k, int *index)
 float *network_predict(network net, float *input)
 {
 #ifdef GPU
+    printf("gpu:%i",gpu_index);
     if(gpu_index >= 0)  return network_predict_gpu(net, input);
 #endif
 

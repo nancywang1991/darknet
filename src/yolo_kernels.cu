@@ -11,6 +11,13 @@ extern "C" {
 #include "box.h"
 #include "image.h"
 #include <sys/time.h>
+#include <stdlib.h>
+//#define _GNU_SOURCE
+#include <string.h>
+//#include <stdio.h>
+//#include <libgen.h>
+//#include <unistd.h>
+
 }
 #define CLS_NUM 21
 #ifdef OPENCV
@@ -25,7 +32,8 @@ extern "C" void crop_detection_coords(image im, int num, float thresh, box *boxe
 extern "C" image crop_image(image im, int dx, int dy, int w, int h);
 extern "C" char *voc_names[];
 extern "C" image voc_labels[];
-
+//extern "C" char *basename(char const *path);
+//extern "C" char *concat(char s1, char s2);
 static float **probs;
 static box *boxes;
 static network net;
@@ -50,6 +58,7 @@ void *fetch_in_thread(void *ptr)
     
     rgbgr_image(in);
     in_s = resize_image(in, net.w, net.h);
+    printf("got here 20");
     }
 
     return 0;
@@ -58,16 +67,20 @@ void *fetch_in_thread(void *ptr)
 void *detect_in_thread(void *ptr)
 {   if (end_flag==0){
     float nms = .4;
-    
+    printf("got here s-1\n");
     detection_layer l = net.layers[net.n-1];
     float *X = det_s.data;
+    printf("got here s0\n");
     float *predictions = network_predict(net, X);
     free_image(det_s);
+    printf("got here s1\n");
     convert_yolo_detections(predictions, l.classes, l.n, l.sqrt, l.side, 1, 1, demo_thresh, probs, boxes, 0);
+    printf("got here s2\n");
     if (nms > 0) {
     do_nms(boxes, probs, l.side*l.side*l.n, l.classes, nms);
-    
+    printf("got here s3\n");
     crop_detection_coords(det, l.side*l.side*l.n, demo_thresh, boxes, probs, voc_names, voc_labels, CLS_NUM, 20, &left, &right, &top, &bot);
+    printf("got here s4\n");
     } else {
     left = 0;
     right = 0;
@@ -84,6 +97,16 @@ void *detect_in_thread(void *ptr)
     }
     return 0;
 }
+
+/*char *basename(char const *path)
+{
+        char *s = strrchr(path, '/');
+        if(s==NULL) {
+                return strdup(path);
+        } else {
+                return strdup(s + 1);
+        }
+}*/
 
 extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename)
 {
@@ -111,7 +134,7 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
     detection_layer l = net.layers[net.n-1];
     int j;
     
-    printf("got here -4");  
+    //printf("got here -4");  
     boxes = (box *)calloc(l.side*l.side*l.n, sizeof(box));
     probs = (float **)calloc(l.side*l.side*l.n, sizeof(float *));
     for(j = 0; j < l.side*l.side*l.n; ++j) probs[j] = (float *)calloc(l.classes, sizeof(float *));
@@ -132,7 +155,7 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
     int cnt = 0;
     
     while(end_flag==0){
-        printf("got here-1"); 
+        //printf("got here-1"); 
         struct timeval tval_before, tval_after, tval_result;
         gettimeofday(&tval_before, NULL);
         if(pthread_create(&fetch_thread, 0, fetch_in_thread, 0)) error("Thread creation failed");
@@ -143,18 +166,29 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
 	//save_image2(disp2, "tmp/", cnt);
         //show_image(disp2, "YOLO");
         }*/
-        printf("got here0");
+        //printf("got here0");
+
+        //char *name = malloc(strlen(filename));
+        char *name=strdup(filename);
+        char savename[512];
+        
+        sprintf(savename, "tmp/%scoords.txt", basename(name));
+        //printf("got here1\n");
+        //strcat(savedir, basename(savename));
+        //printf("got here2\n");
         if (cnt%6==0){
-        save_crop_coords("tmp/", left, right, top, bot);
+        save_crop_coords(savename, left, right, top, bot);
         } 
-        save_crop_coords("tmp/", left, right, top, bot);
+        save_crop_coords(savename, left, right, top, bot);
+        printf("got here3\n");
 	cnt = cnt+1;
         free_image(disp);
-        printf("got here1");
+        //printf("got here1\n");
         cvWaitKey(1);
         pthread_join(fetch_thread, 0);
+        //printf("got here1.5\n");
         pthread_join(detect_thread, 0);
-        printf("got here2");
+        //printf("got here2");
         disp  = det;
         det   = in;
         det_s = in_s;

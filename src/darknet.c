@@ -214,6 +214,7 @@ int main(int argc, char **argv)
     if(gpu_index >= 0){
         cudaError_t status = cudaSetDevice(gpu_index);
         check_error(status);
+        fprintf(stdout, "gpu: %i \n", gpu_index);
     }
 #endif
 

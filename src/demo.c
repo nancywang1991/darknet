@@ -53,8 +53,9 @@ void *detect_in_thread(void *ptr)
     detection_layer l = net.layers[net.n-1];
     float *X = det_s.data;
     float *prediction = network_predict(net, X);
-
+    printf("got here 18\n");
     memcpy(predictions[demo_index], prediction, l.outputs*sizeof(float));
+    printf("got here 19\n");
     mean_arrays(predictions, FRAMES, l.outputs, avg);
 
     free_image(det_s);
@@ -68,7 +69,7 @@ void *detect_in_thread(void *ptr)
     images[demo_index] = det;
     det = images[(demo_index + FRAMES/2 + 1)%FRAMES];
     demo_index = (demo_index + 1)%FRAMES;
-
+    printf("got here 20\n");
     draw_detections(det, l.side*l.side*l.n, demo_thresh, boxes, probs, demo_names, demo_labels, demo_classes);
 
     return 0;
