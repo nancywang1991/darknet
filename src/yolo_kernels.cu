@@ -58,7 +58,7 @@ void *fetch_in_thread(void *ptr)
     
     rgbgr_image(in);
     in_s = resize_image(in, net.w, net.h);
-    printf("got here 20");
+    //printf("got here 20");
     }
 
     return 0;
@@ -69,25 +69,24 @@ void *detect_in_thread(void *ptr)
     if(gpu_index >= 0){
         cudaError_t status = cudaSetDevice(gpu_index);
         check_error(status);
-        fprintf(stdout, "gpu: %i \n", gpu_index);
     }
 
     if (end_flag==0){
     float nms = .4;
-    printf("got here s-1\n");
+    //printf("got here s-1\n");
     detection_layer l = net.layers[net.n-1];
     float *X = det_s.data;
-    printf("got here s0\n");
+    //printf("got here s0\n");
     float *predictions = network_predict(net, X);
     free_image(det_s);
-    printf("got here s1\n");
+    //printf("got here s1\n");
     convert_yolo_detections(predictions, l.classes, l.n, l.sqrt, l.side, 1, 1, demo_thresh, probs, boxes, 0);
-    printf("got here s2\n");
+    //printf("got here s2\n");
     if (nms > 0) {
     do_nms(boxes, probs, l.side*l.side*l.n, l.classes, nms);
-    printf("got here s3\n");
+    //printf("got here s3\n");
     crop_detection_coords(det, l.side*l.side*l.n, demo_thresh, boxes, probs, voc_names, voc_labels, CLS_NUM, 20, &left, &right, &top, &bot);
-    printf("got here s4\n");
+    //printf("got here s4\n");
     } else {
     left = 0;
     right = 0;
@@ -98,9 +97,9 @@ void *detect_in_thread(void *ptr)
     printf("\033[2J");
     printf("\033[1;1H");
     printf("\nFPS:%.0f\n",fps);
-    printf("got here -5");  
+    //printf("got here -5");  
     printf("Objects:\n\n");
-    printf("got here -2");
+    //printf("got here -2");
     }
     return 0;
 }
@@ -187,7 +186,7 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
         save_crop_coords(savename, left, right, top, bot);
         } 
         save_crop_coords(savename, left, right, top, bot);
-        printf("got here3\n");
+        //printf("got here3\n");
 	cnt = cnt+1;
         free_image(disp);
         //printf("got here1\n");
@@ -202,7 +201,7 @@ extern "C" void demo_yolo(char *cfgfile, char *weightfile, float thresh, int cam
 
         gettimeofday(&tval_after, NULL);
         timersub(&tval_after, &tval_before, &tval_result);
-        printf("got here3");
+        //printf("got here3");
         float curr = 1000000.f/((long int)tval_result.tv_usec);
         fps = .9*fps + .1*curr;
     }

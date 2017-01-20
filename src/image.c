@@ -385,7 +385,7 @@ void save_crop_coords(char *name, int left, int right, int top, int bot)
     //char buff[512];
     //sprintf(buff, "%s/coords.txt", name);
     //const char* filename = name;
-    printf("%s",name);
+    //printf("%s",name);
     fp = fopen(name, "a");
     fprintf(fp, "%i,%i,%i,%i\n", left, right, top, bot);
     fclose(fp);
